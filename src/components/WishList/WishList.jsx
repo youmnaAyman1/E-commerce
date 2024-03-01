@@ -45,7 +45,7 @@ console.log("res",res);
     toast.success("It has been added successfully",{duration:1600,position:"top-center"});
 
   } else {
-   toast.error("Errot occured",{duration:1600,position:"top-center"});
+   toast.error("Errot occured ",{duration:1600,position:"top-center"});
   }
 }
 
