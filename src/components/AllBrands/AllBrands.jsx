@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet';
 import { ColorRing } from 'react-loader-spinner';
 import { useQuery } from 'react-query'
 
@@ -43,6 +44,7 @@ const handleBrandClick = (brands) => {
 
 
     return <>
+    <Helmet>  <title> All brands </title> </Helmet>
     <div className="container text-center mb-4 ">
         <h1 className='  text-main m-4 '> All brands </h1>
         <div  className="row  g-4 ">

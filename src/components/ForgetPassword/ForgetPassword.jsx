@@ -3,6 +3,7 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 function ForgetPassword() {
   const navigateToCode = useNavigate('/forgetPassword');
@@ -37,7 +38,9 @@ function ForgetPassword() {
     },
   });
 
-  return (
+  return <>
+
+    <Helmet> <title> Forget password  </title> </Helmet>
     <div className='container'>
       <h2>Please enter your email to receive a verification code</h2>
       <form onSubmit={formik.handleSubmit}>
@@ -59,7 +62,7 @@ function ForgetPassword() {
         </button>
       </form>
     </div>
-  );
+    </>
 }
 
 export default ForgetPassword;

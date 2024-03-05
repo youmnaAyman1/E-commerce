@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HomeSlider from '../HomeSlider/HomeSlider'
 import Products from '../Products/Products'
 import CatogeriesSlider from '../CatogeriesSlider/CatogeriesSlider';
 import { useContext } from 'react';
-// import { cartContext } from '../Context/CartContext/CartContext';
+
+import { Helmet } from 'react-helmet';
+
 
 
 function Home() {
-    // const {addProductToCart}=useContext(cartContext);
+   
+
+
+
+
     return <>
+    <Helmet>
+        <title> Home </title>
+    </Helmet>
+ 
 
     <div className='container m-auto w-50 my-5' >
             <div className="row align-item-center">
@@ -40,3 +50,7 @@ function Home() {
 }
 
 export default Home
+
+
+
+

@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import axios from 'axios';
 import { useFormik } from 'formik';
 import { ColorRing } from 'react-loader-spinner';
+import { Helmet } from 'react-helmet';
 
 // Validation schema
 const validationSchema = yup.object({
@@ -54,7 +55,10 @@ function Register() {
     onSubmit: onSubmit,
   });
 
-  return (
+  return <>
+<Helmet>
+  <title>Register </title>
+</Helmet>
     <div className='w-50 m-auto mt-5'>
       {isSuccess ? <div className='alert alert-success text-center'>Congratulations! Your account has been created.</div> : ""}
       {isFailed ? <div className='alert alert-danger text-center'>{isFailed}</div> : ""}
@@ -151,7 +155,7 @@ colors={['#eee', '#eee', '#eee', '#eee', '#eee']}
         </button>
       </form>
     </div>
-  );
+    </>
 }
 
 export default Register;

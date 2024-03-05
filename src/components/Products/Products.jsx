@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { cartContext } from '../../context/CartContext/CartContext';
 import toast from 'react-hot-toast';
 import { wishListContext } from '../../context/WishList/WishList';
+import { Helmet } from 'react-helmet';
 function Products() {
   const { addProductToCart } = useContext(cartContext);
   const { addProductToWishlist, wishlist, setWishlist,allproductswishlist,removeProductFromWishlist } = useContext(wishListContext);
@@ -75,13 +76,16 @@ console.log(searchTerm);
 
   return (
     <>
+   <Helmet> <title>Products</title> </Helmet>
       <div className='container '>
         <label htmlFor="search"></label>
         <input className='form-control mb-5' onChange={(e)=>{setSearchTerm(e.target.value)}} value={searchTerm}   placeholder='search' type='text'  id='search' />
         <div className=' products row   g-5  '>
           {filterd.map((product, idx) => (
        
+       
             <div key={idx} className='col-md-3 position-relative '>
+              
                     <div className=' product bg-light '>
                    
                 <Link className=' text-decoration-none  ' to={`/ProductDetails/${product.id}`}>

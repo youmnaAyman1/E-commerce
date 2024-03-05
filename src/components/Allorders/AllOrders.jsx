@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet';
 
 function AllOrders() {
  const[allOrders,SetAllOrders]=   useState(null);
@@ -19,6 +20,7 @@ function AllOrders() {
         getUserOrder();
     },[])
     return <>
+    <Helmet> <title>All orders  </title> </Helmet>
     <div className="container">
         <div className="row">
             {allOrders?.map((order,idx)=>

@@ -6,6 +6,7 @@ import { cartContext } from '../../context/CartContext/CartContext';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner';
+import { Helmet } from 'react-helmet';
 
 function CheckOut() {
   const navigate = useNavigate();
@@ -93,6 +94,7 @@ function CheckOut() {
 
   return (
     <>
+    <Helmet> checkout </Helmet>
       <div className='w-50 m-auto py-3'>
         <form onSubmit={formik.handleSubmit}>
           <label htmlFor='city'>City</label>

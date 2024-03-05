@@ -3,6 +3,7 @@ import { wishListContext } from '../../context/WishList/WishList';
 import toast from 'react-hot-toast';
 import { cartContext } from '../../context/CartContext/CartContext';
 import IsLoading from '../IsLoading/IsLoading';
+import { Helmet } from 'react-helmet';
 
 function WishList() {
   const { allproductswishlist, removeProductFromWishlist } = useContext(wishListContext);
@@ -45,11 +46,16 @@ console.log("res",res);
     toast.success("It has been added successfully",{duration:1600,position:"top-center"});
 
   } else {
-   toast.error("Errot occured ",{duration:1600,position:"top-center"});
+   toast.error("Errot occured",{duration:1600,position:"top-center"});
   }
 }
 
-  return (
+  return <>
+   <Helmet>
+<title> Wish list  </title>
+
+
+   </Helmet>
     <div className='container bg-light my-3'>
       <h2>My Wish List</h2>
       {allproductswishlist?.map((product, idx) => (
@@ -79,7 +85,10 @@ console.log("res",res);
       {/* {loading &&<IsLoading/>}
       {!loading && allproductswishlist?.length === 0 && <p>Your wishlist is empty.</p>} */}
     </div>
-  );
+  
+  </>
+   
+
 }
 
 export default WishList;

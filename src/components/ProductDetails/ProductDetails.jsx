@@ -6,6 +6,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import { cartContext } from '../../context/CartContext/CartContext';
 import toast from 'react-hot-toast';
 import { wishListContext } from '../../context/WishList/WishList';
+import { Helmet } from 'react-helmet';
 
 
 function ProductDetails() {
@@ -69,6 +70,7 @@ if(isError){
 
   return (
     <>
+    <Helmet> <title>{productDetails.title.split(' ').slice(0,2).join(' ') }</title> </Helmet>
       <div className="container mt-3">
         <div className="row align-items-center justify-content-center">
           <div className="col-3">

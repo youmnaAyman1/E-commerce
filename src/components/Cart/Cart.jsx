@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { cartContext } from '../../context/CartContext/CartContext';
 import toast from 'react-hot-toast';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -52,6 +53,9 @@ function Cart() {
 
     return (
         <>
+        <Helmet>
+          <title> Cart </title>
+        </Helmet>
           {allProducts?.length ? (
             <div className='container mt-4'>
               <div className='d-flex justify-content-between '>

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function Catogeries() {
 
   return (
     <>
+    <Helmet> <title> Catogeries </title> </Helmet>
       <div className="container py-5 my-4 text-center">
         <h1 className='text-main text-center'>Categories</h1>
         <div className="row g-5">

@@ -1,16 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import { HashRouter, RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
-
 import Home from './components/Home/Home';
-
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Products from './components/Products/Products';
 import ProductDetails from './components/ProductDetails/ProductDetails';
-
 import NotFound from './components/Not Found/NotFound';
 import AuthcontextProvider from './context/AuthContext/AuthContextProvider';
 import ProtectedRoute from './components/Protected Route/ProtectedRoute';
@@ -26,8 +22,9 @@ import VerifyResetCode from './components/VerficationCode/VerifyResetCode';
 import RestPassword from './components/ResetPassword/RestPassword';
 import CheckOut from './components/CheckOut/CheckOut';
 import AllOrders from './components/Allorders/AllOrders';
-
-
+import { Offline } from 'react-detect-offline';
+import logo from '../src/images/joo.png';
+import { Helmet } from 'react-helmet';
 
  const myRouter= createHashRouter([
 {path:'/',element:<Layout/> ,children:[
@@ -84,6 +81,10 @@ function App() {
   
   const myClient = new QueryClient();
   return <>
+  
+ <Helmet>
+ <link rel="icon" href={logo} />
+ </Helmet>
    <QueryClientProvider    client={myClient}>
       <AuthcontextProvider>
 <CartContextProvider>
@@ -95,6 +96,9 @@ function App() {
     </QueryClientProvider>
      
 <Toaster/>
+<Offline>
+  <div className='fixed-bottom bg-dark text-white'> You're offline.Some functionality may be unavailable</div>
+</Offline>
   </>
    
    
