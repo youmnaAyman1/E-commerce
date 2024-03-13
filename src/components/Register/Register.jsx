@@ -141,7 +141,7 @@ function Register() {
           <div className='text-danger'>{myFormik.errors.phone}</div>
         )}
 
-        <button type='submit' className='btn btn-info border-0' disabled={isLoading}>
+        <button type='submit' className='btn bg-main border-0' disabled={isLoading}>
           {isLoading ? <ColorRing
 
 visible={true}
